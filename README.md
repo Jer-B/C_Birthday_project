@@ -1,3 +1,5 @@
+# English README　[Jump to Japanese Version](#japanese)
+
 # Birthday Reminder Web Application
 
 ## About the project
@@ -61,3 +63,69 @@ To test the Flask application, run the following command in your terminal while 
    This will start a web server that serves the Flask application. You can then access the application by opening your web browser and navigating to http://localhost:5000.
    
 Enjoy using the Birthday Reminder Web Application!
+
+<a name="japanese"></a>
+# 日本語版のREADME
+
+# バースデーリマインダーウェブアプリケーション
+
+## プロジェクトについて
+
+これは、Flaskフレームワークを使用してPythonで構築されたウェブアプリケーションです。これは、知っている人々の誕生日を追跡し、それらを忘れないようにするために設計されています。
+
+## 使い方
+
+1. 人々の名前とそれに対応する誕生日の日付を追加してください。
+
+## 理解
+
+- `application.py`: このファイルにはFlaskウェブアプリケーションのコードが含まれています。このアプリケーションにはPOSTリクエストとGETリクエストの両方を処理する1つのルート（`/`）が含まれています。`/`ルートはGETでリクエストされると`index.html`テンプレートがレンダリングされます。POSTでリクエストされた場合、ユーザーはGETを介して再度`/`にリダイレクトされます。
+
+- `birthdays.db`: これは`id`、`name`、`month`、および`day`の列を含む`birthdays`テーブルを持つSQLiteデータベースです。このウェブアプリケーションを使用して新しい行をこのテーブルに挿入できます。
+
+- `static/styles.css`: このディレクトリにはウェブアプリケーションのCSSコードが含まれています。このファイルをカスタマイズしてアプリケーションの外観を変更できます。
+
+- `templates/index.html`: このHTMLファイルはユーザーがウェブアプリケーションを訪れたときにレンダリングされます。
+
+## インストール
+
+必要な依存関係を設定するには、次の手順に従ってください：
+必要に応じて`pip`を`pip3`に変更してください。
+
+1. このリポジトリをローカルマシンにクローンしてください。
+
+2. 仮想環境を作成します（オプションですが推奨）：
+
+   `virtualenv`を使用する場合（インストールされていない場合は`pip install virtualenv`を実行）：
+   ```bash
+   virtualenv venv
+   ```
+   またはvenvを使用する場合（Python 3.3+）：
+   ```bash
+   python -m venv venv
+   ```
+3. 仮想環境を使用する場合（ステップ2）、それをアクティブにします：
+   - Windowsの場合：
+   ```bash
+   venv\Scripts\activate
+   ```
+   - macOSおよびLinuxの場合：
+   ```bash
+   source venv/bin/activate
+   ```
+   
+4. requirements.txtから必要なパッケージをインストールします：
+   ```bash
+   pip install -r requirements.txt
+   ```
+これでプロジェクトの必要なパッケージが設定されます。
+
+## テスト
+
+Flaskアプリケーションをテストするには、次のコマンドをディレクトリ内で実行します：
+   ```bash
+   flask run
+   ```
+   これにより、Flaskアプリケーションを提供するウェブサーバーが起動します。その後、ウェブブラウザを開いてhttp://localhost:5000にアクセスすることで、アプリケーションにアクセスできます。
+   
+Enjoy!
